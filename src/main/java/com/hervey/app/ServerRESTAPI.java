@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Display {
+public class ServerRESTAPI {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Display.class, args);
+		SpringApplication.run(ServerRESTAPI.class, args);
 	}
 
 }

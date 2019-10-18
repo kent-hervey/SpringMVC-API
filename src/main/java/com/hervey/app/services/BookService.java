@@ -10,62 +10,43 @@ import com.hervey.app.repositories.BookRepository;
 
 @Service
 public class BookService {
-	
+
 	private final BookRepository bookRepository;
-	
+
 	public BookService(BookRepository bookRepository) {
-		this.bookRepository=bookRepository;
-		
+		this.bookRepository = bookRepository;
+
 	}
-	
-	public List<Book> allBooks(){
+
+	public List<Book> allBooks() {
 		return bookRepository.findAll();
 	}
-	
+
 	public Book createBook(Book book) {
 		return bookRepository.save(book);
 	}
-	
+
 	public Book findBook(Long id) {
-		Optional <Book> book=bookRepository.findById(id);
-		if(book.isPresent()) {
+		Optional<Book> book = bookRepository.findById(id);
+		if (book.isPresent()) {
 			return book.get();
-		}
-		else {
+		} else {
 			return null;
-			
+
 		}
-		
+
 	}
 
 	public void saveBook(Book book) {
 		// TODO Auto-generated method stub
 		bookRepository.save(book);
-		
+
 	}
 
 	public void deleteBook(Book book) {
 		// TODO Auto-generated method stub
 		bookRepository.delete(book);
-		
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

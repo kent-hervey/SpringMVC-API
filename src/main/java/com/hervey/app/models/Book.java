@@ -16,44 +16,43 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="books")
+@Table(name = "books")
 public class Book {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Size(min=5, max=100)
+
+	@Size(min = 5, max = 100)
 	private String title;
-	
-	@Size(min=5, max=500)
+
+	@Size(min = 5, max = 500)
 	private String description;
-	
-	@Size(min=3, max=40)
+
+	@Size(min = 3, max = 40)
 	private String language;
-	
+
 	@Min(20)
 	private Integer numberOfPages;
-	
-    @Column(updatable=false)
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    private Date createdAt;
-    
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    private Date updatedAt;
-	
-    @PrePersist
-    protected void onCreate(){
-        this.createdAt = new Date();
-    }
-    
-    @PreUpdate
-    protected void onUpdate(){
-        this.updatedAt = new Date();
-    }
 
-	
+	@Column(updatable = false)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date createdAt;
+
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date updatedAt;
+
+	@PrePersist
+	protected void onCreate() {
+		this.createdAt = new Date();
+	}
+
+	@PreUpdate
+	protected void onUpdate() {
+		this.updatedAt = new Date();
+	}
+
 	public Book() {
-		
+
 	}
 
 	public Long getId() {
@@ -111,15 +110,5 @@ public class Book {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
