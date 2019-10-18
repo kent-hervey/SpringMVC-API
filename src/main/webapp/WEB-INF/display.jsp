@@ -13,8 +13,8 @@
 </head>
 
 <body>
-	<h1>Display Test</h1>
-	<h2>Ugher</h2>
+	<h1>Display Presence</h1>
+	<h2>Although this project has no html front-end, a display is used for capability confirmation purposes.</h2>
 
 </body>
 </html>

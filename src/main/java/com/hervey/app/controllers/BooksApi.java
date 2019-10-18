@@ -52,7 +52,7 @@ public class BooksApi {
 /*
  * The above createBook uses @ModelAttribute to retrieve the book information then uses bookService.saveBook() with bookService using bookRepository.save(book);
  * 
- * However, there is another way:  Grab the information from the post using @RequestParam and a contructor that accepts the three arguments
+ * However, there is another way:  Grab the information from the post using @RequestParam and a constructor that accepts the three arguments
  * 
  *     public Book create(@RequestParam(value="title") String title, @RequestParam(value="description") String desc, @RequestParam(value="language") String lang, @RequestParam(value="pages") Integer numOfPages) {
         Book book = new Book(title, desc, lang, numOfPages);
