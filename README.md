@@ -1,6 +1,6 @@
-# Products and Customers
+# REST API as Books
 
-Products and Customers is a simple web application that manages the products a vendor or distributor has under use by customers, and also manages the customers using those products
+A simple RESTful API service that is a demo and reference.  Structure is just a list of books with a few variables/properties.  Books and their properties can be added, deleted, and updated via API controller.
 
 # Installation
 This is a Maven/Spring Boot project with default WAR settings
@@ -13,48 +13,38 @@ Spring Boot will populate your MySQL file.  Just create the file and if differen
 
 # Usage
 
-Vendors/distributors can track their customers by product, and product by customers.  
-
-To start, in the Product side, add the various products that are in use.  Fields are:  
-Bullet list:
-
-  * Name
-  * Model
-  * List Price
-  * Description
-
-Next, on the Customer side, add the various customers.  Fields are:
-Bullet list:
-  * Name (Corporate)
-  * Contact Name
-  * Contact Email
-  * Location
-
-Next, the relationship between customers and products can be populated on either side.  This shows which customers hava a product and which products are in use by a customer.  These fields are:
-Bullet list:
-  * Purchase Date
-  * Serial Number
-
-
+Postman is a handy way to verify the API interface and screnshots are included below 
 
 # Selected Screenshots:
+Get all Books from API using GET and hostport/api/books
 
-![Image](readmeimages/home.png "Home Page")  
-![Image](readmeimages/customers.png "Customers Overview")  
-![Image](readmeimages/products.png "Products Overview")  
-![Image](readmeimages/customer.png "Detail One Customer")  
-![Image](readmeimages/product.png "Detail One Product")  
-![Image](readmeimages/newproduct.png "Create New Product")  
+![Image](readmeimages/getAll.PNG "Get All Books")
+
+Add another book using POST hostport/api/books/?title=New Big Book&description=A good book to read in mornings&language=German&numberOfPages=120
+
+Sent:  
+![Image](readmeimages/AddOne-send.PNG "Sent request to add") 
 
 
+Return:
 
+![Image](readmeimages/AddOne-return.PNG "Return from add") 
+
+Update/Edit German to Russian using PUT hostport/api/books/3 and title=New+Big+Book&description=A+good+book+to+read+in+mornings&language=Russian&numberOfPages=200
+
+![Image](readmeimages/EditOne.PNG "Edit One")  
+
+
+Viewed a book worthy of deletion using: GET localhost:8075/api/books/10
+![Image](readmeimages/ViewOne.PNG "View One") 
+
+Deleting that book using: DELETE localhost:8075/api/books/10
+
+![Image](readmeimages/DeleteOne.PNG "Delete One")
 
 
 # Potential Future Features:
-Bullet list:
-  * Added form input flexibility
-  * API interface
-  * Search, sort, or pagination to accommodate long lists
+None planned
 
 
 
